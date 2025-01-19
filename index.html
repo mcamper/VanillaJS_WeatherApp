@@ -3,42 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vanilla JS Prompts Alerts Weather Forecast</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Weather App HTML Only</title>
 </head>
 <body>
-    <h1> ⛅
-        <br>
-        Currently 21° in Tokyo
-    </h1>
-    <h2> 13° / 23°</h2>
-    <ul>
-        <li>
-            <h3>
-            ⛈️Tomorrow
-            </h3>
-            <p>10° / 22°</p>
-        </li>
-        <li>
-            <h3>
-            🌤️Saturday
-            </h3>
-            <p>10° / 22°</p>
-        </li>
-        <li>
-            <h3>
-            ☀️Sunday
-            </h3>
-            <p>10° / 22°</p>
-        </li>
-    </ul>
-    <button>Change city</button>
-
-    <footer>Coded by <a href="www.github.mariacamper">MariatheTech with ❤️</a></footer>
-
+    <div class="container">
+        <header>
+            <form>
+                <input type="search" placeholder="Enter a city..." required class="placeholder"/>
+                <input type="submit" value="Search" class="search"/>
+            </form>
+        </header>
+        <main>
+            <div class="current-weather">
+                <div class="city-forecast">
+                    <h1>San Francisco</h1>
+                    <br />
+                    <p>Saturday 23:29, few clouds <br />
+                    Humidity: <strong>85%</strong>, <strong>Wind: 3.6km/h</strong></p>
+                </div>
+                <div class="current-display">🌤️14<sup>°C</sup></div>
+            </div>
+            <div class="forecast-weather">
+                <ul>
+                    <li>
+                        Sun 🌤️ <br />
+                        <strong>14°C</strong> - 18°C
+                    </li>
+                    <li>
+                        Mon 🌤️ <br />
+                        <strong>14°C</strong> - 18°C
+                    </li>
+                    <li>
+                        Tue 🌤️ <br />
+                        <strong>14°C</strong> - 18°C
+                    </li>
+                    <li>
+                        Wed 🌤️ <br />
+                        <strong>14°C</strong> - 18°C
+                    </li>
+                    <li>
+                        Thu 🌤️ <br />
+                        <strong>14°C</strong> - 18°C
+                    </li>
+                </ul>     
+            </div>
+        </main>
+        <footer>
+            <p>
+            This project was coded for SheCodes assignment by MariaTheTech and is open-sourced on GitHub.
+            </p>
+        </footer>
+    </div>
+   
   
-    <script src="script.js"></script>
 </body>
-
-
 </html>
