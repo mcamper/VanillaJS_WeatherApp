@@ -13,11 +13,11 @@ background-color: #f9f7fe;
  
 }
 header {
-    border: solid 4px brown;
+    /* border: solid 4px brown; */
      
 }
 form {
-    border: solid 4px yellow; 
+    /* border: solid 4px yellow;  */
     /* margin: 10px; */
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -26,7 +26,7 @@ form {
 } 
 
 .container {
-    border: solid 4px green;
+    /* border: solid 4px green; */
     max-width: 600px;
     margin: 60px auto;
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
@@ -59,13 +59,13 @@ form {
 
 }
 main {
-    border: dotted 4px red;
+    /* border: dotted 4px red; */
     padding: 30px 0;
 }
 .current-weather {
     display: flex;
     justify-content: space-between;
-    border: solid 4px blue;
+    /* border: solid 4px blue; */
     
 }
 h1 {
