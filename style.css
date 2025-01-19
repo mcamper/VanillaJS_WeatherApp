@@ -79,12 +79,19 @@ h1 {
 .current-display {
     font-size: 88px;
     font-weight: bold;
+    display: flex;
 }
  p {
     opacity: .6;
  }    
 sup {
     font-weight: normal;
-    font-size: 36px;
-    /* vertical-align: top; */
+    font-size: 28px;
+    position: relative;
+
+}
+.temp-icon {
+    position: relative;
+    font-size: 40px;
+    margin-right: 10px; 
 }
