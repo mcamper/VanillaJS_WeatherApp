@@ -12,11 +12,11 @@ let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
 let day = days[now.getDay()];
 let hours = timeString;
-let minutes = now.getMinutes();
+
 
 let currentDateTime = document.querySelector("#currentDateTime");
 
-currentDateTime.innerHTML = `${day} ${hours}:${minutes}`;
+currentDateTime.innerHTML = `${day} ${hours}`;
 
 
 
@@ -29,7 +29,7 @@ currentDateTime.innerHTML = `${day} ${hours}:${minutes}`;
 // let weather = {
 //     paris: {                                         
 //         temp: 19.7,                            
-//         humidity: 80
+//         humidity: 80                               
 //     },
 //     tokyo: {                             
 //         temp: 17.3,
