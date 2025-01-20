@@ -1,12 +1,17 @@
 let now = new Date();
 console.log(now);
 
+let options = { hour12: true, timeStyle: 'short'};
+let timeString = now.toLocaleTimeString('en-Us', options);
+console.log(timeString);
+
+
 let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
 // let day = days[currentTime.get]
 
 let day = days[now.getDay()];
-let hours = now.getHours();
+let hours = timeString;
 let minutes = now.getMinutes();
 
 let currentDateTime = document.querySelector("#currentDateTime");
@@ -22,8 +27,8 @@ currentDateTime.innerHTML = `${day} ${hours}:${minutes}`;
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // let weather = {
-//     paris: {                                         now.getDay();
-//         temp: 19.7,
+//     paris: {                                         
+//         temp: 19.7,                            
 //         humidity: 80
 //     },
 //     tokyo: {                             
