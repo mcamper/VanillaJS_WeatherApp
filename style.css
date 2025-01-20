@@ -12,10 +12,10 @@ background-color: #f9f7fe;
 /* background: linear-gradient(109.6deg, rgb(255, 230, 109) 11.2%, rgb(87, 232, 107) 100.2%); */
  
 }
-header {
-    /* border: solid 4px brown; */
+/* header {
+    border: solid 4px brown; 
      
-}
+} */
 form {
     /* border: solid 4px yellow;  */
     /* margin: 10px; */
@@ -73,9 +73,9 @@ h1 {
     font-size: 36px;
     
 }
-.city-forecast {
+/* .city-forecast {
     
-}
+} */
 .current-display {
     font-size: 88px;
     font-weight: bold;
