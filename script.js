@@ -21,30 +21,39 @@ let weather = {
     }
 };
 
+// function enterCity() {
+
+let city = prompt('Enter a city');
+city = city.toLowerCase();
+if(weather[city] !== undefined) {
+    let temperature = weather[city].temp;
+    let humidity = weather[city].humidity;
+    let celsiusTemperature = Math.round(temperature);
+    let farenheitTemperature = Math.round((temperature * 9)/5+32 );
+
+    alert(`It is currently ${celsiusTemperature}°C (${farenheitTemperature})°F in ${city} with a humidity of  ${humidity}%.`);
+} else {
+    alert(`Sorry, we don't know the weather for this ${city}, try going to https://www.google.com/search?q=weather+sydney.`);
+}
+
+// enterCity();
 
 
+// let changeButton = document.querySelector("button");
+// changeButton.addEventListener("click", changeCity);
+
+// function changeCity() {
+//     let city = prompt("What city do you live in?");
+//     let temperature = prompt("What temperature is it?");
+//     let heading = document.querySelector("h1");
+//     if (temperature < 0) {
+//         heading.innerHTML = "😔<br />Currently " + temperature + 
+//         "°C in " + city;
+//     } else {
+//         heading.innerHTML = "😊<br />Currently " + temperature + 
+//         "°C in " + city; 
+//     }
+//     }
 
 
-
-
-
-
-
-
-
-function changeCity() {
-    let city = prompt("What city do you live in?");
-    let temperature = prompt("What temperature is it?");
-    let heading = document.querySelector("h1");
-    if (temperature < 0) {
-        heading.innerHTML = "😔<br />Currently " + temperature + 
-        "°C in " + city;
-    } else {
-        heading.innerHTML = "😊<br />Currently " + temperature + 
-        "°C in " + city; 
-    }
-    }
-
-let changeButton = document.querySelector("button");
-changeButton.addEventListener("click", changeCity);
 
