@@ -29,7 +29,7 @@ currentDateTime.innerHTML = `${day} ${hours}`;
 // let weather = {
 //     paris: {                                         
 //         temp: 19.7,                            
-//         humidity: 80                               
+//         humidity: 80                                 
 //     },
 //     tokyo: {                             
 //         temp: 17.3,
