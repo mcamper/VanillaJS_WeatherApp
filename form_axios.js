@@ -2,7 +2,7 @@ let now = new Date();
 console.log(now);
 
 let options = { hour12: true, timeStyle: 'short'};
-let timeString = now.toLocaleTimeString('en-Us', options);
+let timeString = now.toLocaleTimeString('en-US', options);
 
 let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
