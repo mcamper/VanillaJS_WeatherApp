@@ -35,15 +35,27 @@ function search(event){
 }  
 
 function displayTemperature (response) {
-       console.log(response.data.temperature.current);
-       let currentTemp = Math.round(response.data.temperature.current);
-       let temp = document.querySelector("#temp");
-       temp.innerHTML = `${currentTemp}`;
- }
-function displayDescription (response) {
+    console.log(response);
+
+    let currentTemp = Math.round(response.data.temperature.current);
+    let temp = document.querySelector("#temp");
+    temp.innerHTML = `${currentTemp}`;
+ 
     let description = response.data.condition.description;
     let weatherDescription = document.querySelector("#weather-description");
     weatherDescription.innerHTML = `${description}`;
+
+    let humidity = response.data.temperature.humidity;
+    let humidityElement = document.querySelector("#humidity");
+    humidityElement.innerHTML = `${humidity}%`;
+
+    let windSpeed = Math.round(response.data.wind.speed);
+    let windElement = document.querySelector("#wind-speed");
+    windElement.innerHTML = `{windSpeed} km/h`;
+
+    let icon = response.data.condition.icon_url;
+    let tempIcon = document.querySelector(".temp-icon");
+    tempIcon.innerHTML = `<img src="${icon}" alt="${description}" />`;
 }
 
 function handleError(error) {
