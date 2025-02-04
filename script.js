@@ -1,87 +1,78 @@
+ 
 let now = new Date();
-console.log(now);
 
 let options = { hour12: true, timeStyle: 'short'};
-let timeString = now.toLocaleTimeString('en-Us', options);
-console.log(timeString);
-
+let timeString = now.toLocaleTimeString('en-US', options);
 
 let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
-// let day = days[currentTime.get]
 
 let day = days[now.getDay()];
 let hours = timeString;
 
-
 let currentDateTime = document.querySelector("#currentDateTime");
-
 currentDateTime.innerHTML = `${day} ${hours}`;
 
 
+function search(event){
+    event.preventDefault();
+
+    let searchInput = document.querySelector("#search-input");
+    let searchCity = document.querySelector("#search-city");
+    if(searchInput.value){
+        searchCity.innerHTML = `${searchInput.value}`;
+      
+   
+    let apiKey = "77ao6ba83c370f60fbc94613061ab8t5";
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${searchInput.value}&key=${apiKey}&units=imperial`;
+    
+   
+    axios.get(apiUrl).then(displayTemperature).catch(handleError);
+
+    return null;
+    }
+
+}  
+
+function displayTemperature (response) {
+    console.log(response.data);
+
+    let currentTemp = Math.round(response.data.temperature.current);
+    let temp = document.querySelector("#temp");
+    temp.innerHTML = `${currentTemp}`;
+ 
+    let description = response.data.condition.description;
+    let weatherDescription = document.querySelector("#weather-description");
+    weatherDescription.innerHTML = `${description}`;
+
+    let humidity = response.data.temperature.humidity;
+    let humidityElement = document.querySelector("#humidity");
+    humidityElement.innerHTML = `${humidity}%`;
+
+    let windSpeed = Math.round(response.data.wind.speed);
+    let windElement = document.querySelector("#wind-speed");
+    windElement.innerHTML = `${windSpeed} km/h`;
+
+    let icon = response.data.condition.icon_url;
+    let tempIcon = document.querySelector(".temp-icon");
+    tempIcon.innerHTML = `<img src="${icon}" alt="${description}" />`;
+
+   
+}
+
+function handleError(error) {
+    console.error("An error occurred:", error);
+    let temp = document.querySelector("#temp");
+    temp.innerHTML = `Unable to fetch data. Check the city name!`;
+}
+
+ let form = document.querySelector("#search-form");
+ form.addEventListener("submit", search); 
 
 
 
 
-
-
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// let weather = {
-//     paris: {                                         
-//         temp: 19.7,                            
-//         humidity: 80                                 
-//     },
-//     tokyo: {                             
-//         temp: 17.3,
-//         humidity: 50
-//     },
-//     lisbon: {
-//         temp: 30.2,
-//         humidity: 20
-//     },
-//     "san francisco": {
-//         temp: 20.9,
-//         humidity: 100
-//     },
-//     oslo: {
-//         temp: -5,
-//         humidity: 20
-//     }
-// };
-
-// // function enterCity() {
-
-// let city = prompt('Enter a city');
-// city = city.toLowerCase();
-// if(weather[city] !== undefined) {
-//     let temperature = weather[city].temp;
-//     let humidity = weather[city].humidity;
-//     let celsiusTemperature = Math.round(temperature);
-//     let farenheitTemperature = Math.round((temperature * 9)/5+32 );
-
-//     alert(`It is currently ${celsiusTemperature}°C (${farenheitTemperature})°F in ${city} with a humidity of  ${humidity}%.`);
-// } else {
-//     alert(`Sorry, we don't know the weather for this ${city}, try going to https://www.google.com/search?q=weather+sydney.`);
-// }
-
-// enterCity();
-
-// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// let changeButton = document.querySelector("button");
-// changeButton.addEventListener("click", changeCity);
-
-// function changeCity() {
-//     let city = prompt("What city do you live in?");
-//     let temperature = prompt("What temperature is it?");
-//     let heading = document.querySelector("h1");
-//     if (temperature < 0) {
-//         heading.innerHTML = "😔<br />Currently " + temperature + 
-//         "°C in " + city;
-//     } else {
-//         heading.innerHTML = "😊<br />Currently " + temperature + 
-//         "°C in " + city; 
-//     }
-//     }
-
-
-
+// // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// // Test API response
+// // let apiKey = "77ao6ba83c370f60fbc94613061ab8t5";
+// // let apiUrl = `https://api.shecodes.io/weather/v1/current?query=Sydney&key=${apiKey}&units=imperial`;
+// // console.log(apiUrl);
